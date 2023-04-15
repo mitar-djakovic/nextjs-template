@@ -1,0 +1,65 @@
+{
+	"name": "nextjs-template",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"type-check": "tsc",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"postinstall": "husky install",
+		"coverage": "npm test -- --coverage --watchAll=false"
+	},
+	"dependencies": {
+		"next": "latest",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0"
+	},
+	"devDependencies": {
+		"@next/env": "^13.3.0",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^14.0.0",
+		"@testing-library/user-event": "^14.4.3",
+		"@types/jest": "^29.5.0",
+		"@types/node": "^18.15.11",
+		"@types/react": "^18.0.33",
+		"@types/react-dom": "^18.0.11",
+		"@typescript-eslint/eslint-plugin": "^5.57.1",
+		"@typescript-eslint/parser": "^5.57.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.37.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-next": "^13.2.4",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-security": "^1.7.1",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"eslint-plugin-sonarjs": "^0.19.0",
+		"husky": "^8.0.3",
+		"jest": "^29.5.0",
+		"jest-css-modules-transform": "^4.4.2",
+		"jest-environment-jsdom": "^29.5.0",
+		"lint-staged": "^13.2.0",
+		"prettier": "^2.8.7",
+		"ts-jest": "^29.1.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.3"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn format && yarn lint && yarn coverage",
+			"pre-push": "npm test"
+		}
+	}
+}
